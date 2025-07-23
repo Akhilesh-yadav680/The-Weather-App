@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Your City Name:</label>
+        <input type="text" name="city" required />
+        <button type="submit">Fetch Weather</button>
+    </form>
+
+    {% if weather %}
+        <h2>Weather in {{ weather.city }}</h2>
+        <p>Temperature: {{ weather.temperature }}°C</p>
+        <p>Description: {{ weather.description }}</p>
+        <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon">
+    {% elif error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
