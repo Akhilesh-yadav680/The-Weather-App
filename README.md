@@ -44,27 +44,46 @@ In views.py, replace 'Your API Key' with your actual OpenWeatherMap API key.
 Alternatively, use a .env file and load it using python-dotenv.
 
 5. Run the App
-python manage.py runserver
+1.python manage.py migrate
+2.python manage.py runserver
 Visit http://127.0.0.1:8000/ in your browser.
 
 📁 Project Structure
 The-Weather-App/
 │
-├── main/
-│   ├── templates/
+├── main/                     # Django app (likely contains views, templates)
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
 │   ├── views.py
-│   └── ...
+│   └── templates/
+│       └── home.html
 │
-├── weather/
-│   ├── views.py
-│   └── ...
+├── weather/                  # Another Django app (could be modular or alternative logic)
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
 │
-├── weather_app/
+├── weather_app/              # Django project core
+│   ├── __init__.py
 │   ├── settings.py
-│   └── ...
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
 │
-├── manage.py
-└── requirements.txt
+├── .gitignore                # Ignore rules for Git (includes db.sqlite3 etc.)
+├── LICENSE                   # Open source license
+├── README.md                 # Project description & setup instructions
+├── manage.py                 # Django project entry point
+├── requirements.txt          # Python package dependencies
+
 📄 License
 This project is open-source and available under the MIT License.
 
