@@ -205,3 +205,39 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ignore environment variable files
+.env
+.env.*          
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.so
+
+# VSCode settings 
+.vscode/
+
+# Secrets/configs
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.envrc
+secrets.yml
+config.yaml
+credentials.json
+
+# Node.js
+node_modules/
+
+# Django or Flask specific 
+*.sqlite3
+instance/
+*.log
+
+# OS generated
+.DS_Store
+Thumbs.db
+
